@@ -5,7 +5,7 @@ function App() {
   const [preguntaActual, setPreguntaActual] = useState(0);
   const [puntuación, setPuntuación] = useState(0);
   const [isFinished, setIsFinished] = useState(false);
-  const [tiempoRestante, setTiempoRestante] = useState(10);
+  const [tiempoRestante, setTiempoRestante] = useState(60);
   const [areDisabled, setAreDisabled] = useState(false);
   const [answersShown, setAnswersShown] = useState(false);
 
@@ -21,7 +21,7 @@ function App() {
         setIsFinished(true);
       } else {
         setPreguntaActual(preguntaActual + 1);
-        setTiempoRestante(10);
+        setTiempoRestante(60);
       }
     }, 1500);
   }
@@ -111,7 +111,7 @@ function App() {
           ) : (
             <button
               onClick={() => {
-                setTiempoRestante(10);
+                setTiempoRestante(60);
                 setAreDisabled(false);
                 if (preguntaActual === preguntas.length - 1) {
                   setIsFinished(true);
